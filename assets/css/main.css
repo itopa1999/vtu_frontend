@@ -1816,3 +1816,21 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+
+.btn-service {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #fdc134; /* Primary blue color */
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-service:hover {
+  background-color: #fdc134; /* Darker blue on hover */
+  color: white;
+}
