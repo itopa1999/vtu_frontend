@@ -1817,7 +1817,6 @@ section,
   /* Add your styles here */
 }
 
-
 .btn-service {
   display: inline-block;
   padding: 5px 10px;
@@ -1851,6 +1850,8 @@ section,
 
 .general-form input[type=text],
 .general-form input[type=number],
+.general-form input[type=email],
+.general-form input[type=password],
 .general-form select {
   font-size: 14px;
   padding: 10px 15px;
@@ -1863,12 +1864,16 @@ section,
 
 .general-form input[type=text]:focus,
 .general-form input[type=number]:focus,
+.general-form input[type=password]:focus,
+.general-form input[type=email]:focus,
 .general-form select:focus {
   border-color: var(--accent-color);
 }
 
 .general-form input[type=text]::placeholder,
 .general-form input[type=number]::placeholder,
+.general-form input[type=password]::placeholder,
+.general-form input[type=email]::placeholder,
 .general-form select::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
