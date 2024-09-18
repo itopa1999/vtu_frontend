@@ -162,3 +162,33 @@
   });
 
 })();
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Check for the token in localStorage
+  const token = localStorage.getItem('token');
+  const loginBtn = document.getElementById('login-btn');
+  const logoutBtn = document.getElementById('logout-btn');
+  const profilePic = document.getElementById('profile-pic');
+
+  if (token !== null && token !== 'undefined') {
+      // If token exists, show Logout button and profile picture
+      loginBtn.classList.add('d-none');  // Hide Login button
+      logoutBtn.classList.remove('d-none');  // Show Logout button
+      profilePic.classList.remove('d-none');  // Show profile picture
+  } else {
+      // If no token, show Login button and hide Logout and profile picture
+      loginBtn.classList.remove('d-none');  // Show Login button
+      logoutBtn.classList.add('d-none');  // Hide Logout button
+      profilePic.classList.add('d-none');  // Hide profile picture
+  }
+
+  // Optional: You can also handle the logout action to remove the token
+  logoutBtn.addEventListener('click', function() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('username');  // Clear the token from localStorage
+  });
+});

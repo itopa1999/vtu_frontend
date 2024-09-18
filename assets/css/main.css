@@ -1890,3 +1890,21 @@ section,
 .general-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
+
+
+
+.header .profile_pic,
+.header .profile_pic:focus {
+  padding: 6px 30px;
+  margin: 0 0 0 30px;
+  line-height: 1;
+  max-height: 50px;
+}
+
+@media (max-width: 1200px) {
+  .header .profile_pic {
+    order: 2;
+    margin: 0 15px 0 0;
+    padding: 6px 15px;
+  }
+}
