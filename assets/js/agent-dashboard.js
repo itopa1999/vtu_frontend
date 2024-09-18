@@ -2,7 +2,7 @@
 
 const token = localStorage.getItem('token')
 
-if (!token){
+if (token == null && token == 'undefined') {
     window.location.href = 'login.html';
     document.getElementById('message').innerText = 'Token is invalid login again';
     errorAlert.classList.remove('d-none');
