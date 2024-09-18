@@ -8,7 +8,7 @@ if (!token){
     errorAlert.classList.remove('d-none');
 }
 
-fetch('http://127.0.0.1:8000/admins/api/list/school/application/', {
+fetch('https://lucky1999.pythonanywhere.com/admins/api/list/school/application/', {
     method: 'GET',
     headers: {
         'Authorization': 'Bearer ' + token
