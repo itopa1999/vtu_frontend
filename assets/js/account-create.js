@@ -8,7 +8,8 @@ document.querySelector('.general-form').addEventListener('submit', function(even
     errorAlert.classList.add('d-none');
     document.getElementById('message').innerText = '';
 
-    fetch('http://localhost:8000/admins/api/create/user/', {
+    // fetch('http://localhost:8000/admins/api/create/user/', {
+    fetch('https://lucky1999.pythonanywhere.com/admins/api/create/user/', {
         method: 'POST',
         body: formData,
         headers: {

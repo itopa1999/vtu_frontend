@@ -10,8 +10,8 @@ document.querySelector('.general-form').addEventListener('submit', function(even
     SuccessAlert.classList.add('d-none');
     document.getElementById('error-message').innerText = '';
     document.getElementById('success-message').innerText = '';
-
-    fetch('http://localhost:8000/admins/api/create/airtime-money/', {
+    // fetch('http://localhost:8000/admins/api/create/airtime-money/', {
+    fetch('https://lucky1999.pythonanywhere.com/admins/api/create/airtime-money/', {
         method: 'POST',
         body: formData,
         headers: {
