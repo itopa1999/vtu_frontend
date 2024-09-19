@@ -1,7 +1,7 @@
 // Fetch data for dashboard
 
 const token = localStorage.getItem('token')
-
+const errorAlert = document.getElementById('error-alert');
 if (token == null && token == 'undefined') {
     window.location.href = 'login.html';
     document.getElementById('message').innerText = 'Token is invalid login again';
@@ -21,6 +21,10 @@ fetch('http://localhost:8000/admins/api/list/school/application/', {
         // Token is expired or invalid
         handleTokenExpiry();
         throw new Error('Unauthorized: Token expired or invalid');
+    }
+    else if (!response.ok) {
+        document.getElementById('message').innerText = 'Server is not responding';
+        errorAlert.classList.remove('d-none');
     }
     else {
         throw new Error('Failed to load dashboard data');
@@ -59,17 +63,17 @@ fetch('http://localhost:8000/admins/api/list/school/application/', {
             row.innerHTML = '<td colspan="7">No applications found</td>';
             tableBody.appendChild(row);
         }
-    console.log(data);
 })
-.catch(error => console.error('Error:', error));
+.catch(error => {
+    document.getElementById('message').innerText = error;
+    errorAlert.classList.remove('d-none');
+});
 
-populateTable();
 
 
 function handleTokenExpiry() {
     // Clear stored token and redirect to login
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
+    localStorage.removeItem('token');
     localStorage.removeItem('username');
     // Optionally show a message to the user
     window.location.href = 'login.html';

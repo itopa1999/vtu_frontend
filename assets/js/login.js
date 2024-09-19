@@ -36,6 +36,9 @@ document.querySelector('.general-form').addEventListener('submit', function(even
                 document.getElementById('spinner').classList.add('d-none');
                 document.getElementById('login-text').classList.remove('d-none');
             });
+        }else if (!response.ok) {
+            document.getElementById('message').innerText = 'Server is not responding';
+            errorAlert.classList.remove('d-none');
         }
         else {
             // Display error

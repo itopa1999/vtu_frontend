@@ -55,6 +55,9 @@ document.querySelector('.general-form').addEventListener('submit', function(even
                 document.getElementById('spinner').classList.add('d-none');
                 document.getElementById('login-text').classList.remove('d-none');
             });
+        }else if (!response.ok) {
+            document.getElementById('message').innerText = 'Server is not responding, try again';
+            errorAlert.classList.remove('d-none');
         }
         else{
             document.getElementById('error-message').innerText = data.screenshot;
@@ -63,9 +66,7 @@ document.querySelector('.general-form').addEventListener('submit', function(even
             document.getElementById('login-text').classList.remove('d-none');
         }
     }).catch(error => {
-        console.error('Error:', error);
-        // Display a generic error message
-        document.getElementById('error-message').innerText = 'An unexpected error occurred.';
+        document.getElementById('error-message').innerText = error;
         errorAlert.classList.remove('d-none');
         document.getElementById('spinner').classList.add('d-none');
         document.getElementById('login-text').classList.remove('d-none');
