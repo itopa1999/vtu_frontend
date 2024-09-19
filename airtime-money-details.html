@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Starter Page - Bocor Bootstrap Template</title>
+  <title>StartTop VTU and services</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -24,6 +24,9 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
@@ -38,13 +41,14 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Bocor</h1>
+        <h1 class="sitename">Start<span>Top</span></h1>
         <span>.</span>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html#hero" class="active">Home</a></li>
+          <li><a href="agent-dashboard.html" id="dashboard-btn">Dashboard</a></li>
           <li><a href="index.html#about">Why Us</a></li>
           <li><a href="index.html#featuredservices">Services</a></li>
           <li class="dropdown"><a href="#"><span>Links</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -53,7 +57,7 @@
               <li><a href="data-details.html">Data Plan</a></li>
               <li><a href="admission-details.html">Admission & Scholarship</a></li>
               <li><a href="bulk-sms-details.html">Bulk SMS Plan</a></li>
-              <li><a href="airtime-money-details">Airtime to Money</a></li>
+              <li><a href="airtime-money-details.html">Airtime to Money</a></li>
               <li><a href="cable-details.html">Cable/Tv Plan</a></li>
               <li><a href="electricity-details.html">Electricity Plan</a></li>
               <li><a href="create-agent.html">Create Agent Account</a></li>
@@ -67,7 +71,11 @@
 
       <a id="login-btn" class="btn-getstarted" href="login.html">Login</a>
       <a id="logout-btn" class="btn-getstarted" href="index.html">Logout</a>
-      <img id="profile-pic" src="assets/img/profile_pic.jpg" class="profile_pic" alt="">
+      <img id="profile-pic" src="assets/img/profile_pic.jpg" class="profile_pic" alt="" data-bs-toggle="dropdown">
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#!" id="username">Link 1</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -99,21 +107,112 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Buy VTU Airtime Online in Nigeria</h2>
+        <h2>Convert Airtime to Money</h2>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up">
+        <h2 class="text-center">Easily convert your airtime into cash with our seamless process.</h2>
+        
+        <div class="alert alert-warning" role="alert">
+            Please note that a 15% fee will be deducted from the amount you send. The remaining balance will be credited to your account.
+        </div>
+        
+        <h4>Steps to Convert Airtime to Money</h4>
+        <ol>
+            <li>
+                <strong>Send Money:</strong>
+                <p>Transfer the specified amount to this number: <strong>xxx-xxxx</strong>.</p>
+            </li>
+            <li class="md-3">
+                <strong>Fill Out the Form:</strong>
+                <p>After completing the transfer, fill out the <a href="#!" class="btn btn-link" data-toggle="modal" data-target="#formModal">form</a> with the following details:</p>
+                <ul>
+                    <li>Your name (Required)</li>
+                    <li>Phone number (Required)</li>
+                    <li>Email Address (Optional)</li>
+                    <li>Amount transferred (Required)</li>
+                    <li>Date of Transfer (Required)</li>
+                    <li>Account Number (if not provided will transfer it to the provided phone number)</li>
+                    <li>Screenshot of payment for fast processing (Optional)</li>
+                </ul>
+            </li>
+            <li class="mt-2">
+                <strong>Confirmation:</strong>
+                <p>We will verify your transfer and form submission.</p>
+            </li>
+            <li>
+                <strong>Account Credit:</strong>
+                <p>Once confirmed, your account / phone number will be credited immediately with the remaining amount after the 15% fee.</p>
+            </li>
+        </ol>
+
+        <div class="alert alert-info" role="alert">
+            If you have any questions or need assistance, please go to the <strong><a href="#footer" class="btn btn-link">Contact Section</a></strong> .
+        </div>
         
       </div>
 
     </section><!-- /Starter Section Section -->
 
+
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModallLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="formModalLabel">Fill Out the Form (form should be fill after successful transfer)</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                <div class="alert alert-danger  container d-none" id="error-alert">
+                  <strong>Error!</strong> <span id="error-message"></span>
+                </div>
+                <div class="alert alert-success  container d-none" id="success-alert">
+                  <strong>success!</strong> <span id="success-message"></span>
+                </div>
+                  <form class="general-form" id="airtime-money">
+                    <div class="form-group">
+                      <input type="text" name="name" class="form-control" placeholder="Name *" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="phone" class="form-control" placeholder="Phone Number *" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Email Address">
+                  </div>
+                  <div class="form-group">
+                    <input type="number" name="amount_transfer" class="form-control" placeholder="Amount Transferred *" id="amount-transfer" required>
+                    <span class="text-danger" id="amount-pay" style="font-weight: bolder; font-size: x-small;"></span>
+                  </div>
+                      <div class="form-group">
+                        <label for="screenshot">Date of Transfer *</label>
+                          <input type="date" name="date_transfer" class="form-control" id="date" placeholder="" required>
+                      </div>
+                      <div class="form-group">
+                        <input type="number" name="account_number" class="form-control" placeholder="Account Number" id="accountNumber">
+                    </div>
+                    <div class="form-group">
+                      <label for="screenshot">Screenshot</label>
+                      <input type="file" name="screenshot" class="form-control" id="screenshot">
+
+                    </div>
+                      <div class="col-md-12 text-center">
+                        <button type="submit"><span class="" id="login-text">Submit <i class="bi bi-arrow-right"></i>
+                        </span> <div id="spinner" class="spinner-border text-white d-none"></div></button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
   </main>
 
   <footer id="footer" class="footer dark-background">
     <div class="container">
-      <h3 class="sitename">Bocor</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <h3 class="sitename">Start<span id="footer-span">Top</span></h3>
+      <p>StartTop is your go-to platform for fast VTU services, including mobile top-ups, data purchases, and utility payments. Stay connected effortlessly with our reliable and convenient services.</p>
       <div class="social-links d-flex justify-content-center">
         <a href=""><i class="bi bi-twitter-x"></i></a>
         <a href=""><i class="bi bi-facebook"></i></a>
@@ -125,10 +224,7 @@
         <span>Copyright</span> <strong class="px-1 sitename">Bocor</strong> <span>All Rights Reserved</span>
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
@@ -148,9 +244,12 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/airtime2money.js"></script>
 
 </body>
 

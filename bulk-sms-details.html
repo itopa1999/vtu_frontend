@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Starter Page - Bocor Bootstrap Template</title>
+  <title>StartTop VTU and services</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -38,13 +38,14 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Bocor</h1>
+        <h1 class="sitename">Start<span>Top</span></h1>
         <span>.</span>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html#hero" class="active">Home</a></li>
+          <li><a href="agent-dashboard.html" id="dashboard-btn">Dashboard</a></li>
           <li><a href="index.html#about">Why Us</a></li>
           <li><a href="index.html#featuredservices">Services</a></li>
           <li class="dropdown"><a href="#"><span>Links</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -53,7 +54,7 @@
               <li><a href="data-details.html">Data Plan</a></li>
               <li><a href="admission-details.html">Admission & Scholarship</a></li>
               <li><a href="bulk-sms-details.html">Bulk SMS Plan</a></li>
-              <li><a href="airtime-money-details">Airtime to Money</a></li>
+              <li><a href="airtime-money-details.html">Airtime to Money</a></li>
               <li><a href="cable-details.html">Cable/Tv Plan</a></li>
               <li><a href="electricity-details.html">Electricity Plan</a></li>
               <li><a href="create-agent.html">Create Agent Account</a></li>
@@ -67,7 +68,11 @@
 
       <a id="login-btn" class="btn-getstarted" href="login.html">Login</a>
       <a id="logout-btn" class="btn-getstarted" href="index.html">Logout</a>
-      <img id="profile-pic" src="assets/img/profile_pic.jpg" class="profile_pic" alt="">
+      <img id="profile-pic" src="assets/img/profile_pic.jpg" class="profile_pic" alt="" data-bs-toggle="dropdown">
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#!" id="username">Link 1</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -112,8 +117,8 @@
 
   <footer id="footer" class="footer dark-background">
     <div class="container">
-      <h3 class="sitename">Bocor</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <h3 class="sitename">Start<span id="footer-span">Top</span></h3>
+      <p>StartTop is your go-to platform for fast VTU services, including mobile top-ups, data purchases, and utility payments. Stay connected effortlessly with our reliable and convenient services.</p>
       <div class="social-links d-flex justify-content-center">
         <a href=""><i class="bi bi-twitter-x"></i></a>
         <a href=""><i class="bi bi-facebook"></i></a>
@@ -125,10 +130,7 @@
         <span>Copyright</span> <strong class="px-1 sitename">Bocor</strong> <span>All Rights Reserved</span>
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>

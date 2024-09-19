@@ -170,20 +170,31 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Check for the token in localStorage
   const token = localStorage.getItem('token');
+  const Username = localStorage.getItem('username');
   const loginBtn = document.getElementById('login-btn');
   const logoutBtn = document.getElementById('logout-btn');
   const profilePic = document.getElementById('profile-pic');
+  const dashboard = document.getElementById('dashboard-btn');
+  const username = document.getElementById('username');
+  
 
   if (token !== null && token !== 'undefined') {
       // If token exists, show Logout button and profile picture
       loginBtn.classList.add('d-none');  // Hide Login button
       logoutBtn.classList.remove('d-none');  // Show Logout button
       profilePic.classList.remove('d-none');  // Show profile picture
+      dashboard.classList.remove('d-none');
+      if (Username !== null && Username !== 'undefined') {
+        username.innerHTML = Username;
+      }else{
+        username.innerHTML = "Username";
+      }
   } else {
       // If no token, show Login button and hide Logout and profile picture
       loginBtn.classList.remove('d-none');  // Show Login button
       logoutBtn.classList.add('d-none');  // Hide Logout button
       profilePic.classList.add('d-none');  // Hide profile picture
+      dashboard.classList.add('d-none');
   }
 
   // Optional: You can also handle the logout action to remove the token

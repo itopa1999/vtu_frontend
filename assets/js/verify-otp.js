@@ -15,7 +15,7 @@ document.querySelector('.general-form').addEventListener('submit', function(even
         window.location.href = 'create-agent.html';
     }
     
-    fetch('https://lucky1999.pythonanywhere.com/admins/api/verify/user/', {
+    fetch('http://localhost:8000/admins/api/verify/user/', {
         method: 'POST',
         body: formData,
         headers: {
