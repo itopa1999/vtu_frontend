@@ -33,7 +33,7 @@ fetch('https://lucky1999.pythonanywhere.com/admins/api/list/school/application/'
 .then(data => {
     document.getElementById('applicant-data').innerText = data.total_applications;
     document.getElementById('upload-data').innerText = data.total_schools;
-
+ 
     const tableBody = document.querySelector('#applications-table tbody');
         tableBody.innerHTML = ''; // Clear existing rows
 

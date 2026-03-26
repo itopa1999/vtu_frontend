@@ -4,7 +4,7 @@ document.querySelector('.general-form').addEventListener('submit', function(even
     const formData = new FormData(this);
     document.getElementById('spinner').classList.remove('d-none');
     document.getElementById('login-text').classList.add('d-none');
-    const errorAlert = document.getElementById('error-alert');
+    const errorAlert = document.getElementById('success-alert');
     errorAlert.classList.add('d-none');
     document.getElementById('message').innerText = '';
 
